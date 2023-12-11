@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Adham Kaseb" />
+  <title>CRUDS | By Adham Kaseb⚡</title>
+  <link rel="icon" href="assets/images/icon.png" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/mainStyle.css" />
+</head>
+<body>
+
+  <div class="cruds_project">
+    <div class="container mt-5">
+
+      <div class="row cruds_inputs mb-5">
+        <div class="col-lg-11 col-md-12 col-sm-12 m-auto text-center column">
+          <input
+            autofocus
+            type="text"
+            id="prod__name"
+            required
+            class="inputs prod__name"
+            placeholder="Product Name"/>
+          <div class="price_category_count_inputs mb-3">
+            <input
+              type="number"
+              id="price"
+              class="inputs prod__price"
+              required
+              placeholder="Price"/>
+              <input
+                type="number"
+                id="count"
+                class="inputs prod__count"
+                placeholder="count"/>
+              <input
+                type="text"
+                id="category"
+                class="inputs prod__category"
+                required
+                placeholder="category"/>
+          </div>
+          <button id="submit" class="create__button button press inputs mt-3">CREATE</button>
+        </div>
+      </div>
+
+      <div class="row cruds__outputs mb-5">
+        <div class="col-lg-11 col-md-12 col-sm-12 m-auto text-center column">
+          <div class="search__block mb-5">
+            <input
+              onkeyup="dataSearch(this.value)"
+              type="text"
+              id="search__input"
+              class="inputs prod__search"
+              placeholder="Search"/>
+            <div class="btn__searching">
+              <button id="srchByName"     onclick = "getSearchMood(this.id)" class="search__byname__button button press inputs mt-3">Search By Product Name</button>
+              <button id="srchByCategory" onclick = "getSearchMood(this.id)" class="search__category__button button press inputs mt-3">Search By Category</button>
+            </div>
+            <div id="delete__all__area" class="delete__alls mt-3"></div>
+            <button class="show__deleted__data button press inputs mt-3 px-4" style="width: 100%;" onclick="showDeletedDataPopup()">Show Deleted Data</button>
+          </div>
+
+          <table class="table mb-5 text-start">
+            <thead>
+              <tr class="sticky-element">
+                <th scope="col">#</th>
+                <th scope="col" class="table_head">Name</th>
+                <th scope="col" class="table_head">Category</th>
+                <th scope="col" class="table_head">Price</th>
+                <th scope="col" >Update</th>
+                <th scope="col" >Delete</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+              <tr>
+                <th scope="row" class="index">1</th>
+                <td>samsung</td>
+                <td>tv</td>
+                <td>6200.00</td>
+                <td>500.00</td>
+                <td>5700.00</td>
+                <th class="not__stick" scope="col"><button id="update"class="update__button button  inputs ">Update</th>
+                <th class="not__stick" scope="col"><button id="delete"class="delete__button button  inputs ">Delete</th>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <button id="scrollButton">
+    <lord-icon src="https://cdn.lordicon.com/vtpxjewg.json" trigger="hover" colors="primary:#b4b4b4,secondary:#363636" style="width:65px;height:65px"> </lord-icon>
+  </button>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row rounded-3 footer__row mb-5">
+
+        <div class="col-2  m-auto left__coll">
+          <img class="img-fluid target_img px-3" src="assets/images/logo.png" alt="Adham Kaseb AK-Official">
+        </div>
+
+        <div class="col-10 m-auto left__col">
+          <p class="lead px-3"><span style="font-size: 3rem; color: #EC9111; display: inline; font-weight: 700;">I'm Adham Kaseb</span>, <br> a professional web developer. With a passion for creating engaging online experiences, I specialize in designing and developing websites that leave a lasting impression. <br><br> I am passionate about what I do, and I am confident in my ability to deliver exceptional front-end development services that meet your expectations. Your satisfaction is my utmost priority.</p>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="followus__part">
+            <h2 class="d-inline">Follow Me</h2>
+            <lord-icon
+              class="user__icon"
+              src="https://cdn.lordicon.com/kxrhwtdg.json"
+              trigger="hover"
+              colors="primary:#151414,secondary:#848484"
+              style="width:60px;height:60px">
+            </lord-icon>
+              <div class="social-links">
+                <a href="https://www.facebook.com/adham.kaseb.54/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank"><i class="fab fa-google"></i></a>
+                <a href="https://twitter.com/Adham_KasebSSj4" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/adham-kaseb-03a34521b/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <button id="whatsapp" class="whatsapp__button button press inputs mt-3" style="font: 40px!important;" onclick="openWhatsApp()"><b>Whatsapp</b><lord-icon src="https://cdn.lordicon.com/mjmrmyzg.json" trigger="hover" colors="primary:#545454,secondary:#848484" style="width:50px;height:50px"></lord-icon></button>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">
+        <p class="m-0 pb-3">&copy; 2023 All Rights Reserved. | this system made with 💖 by adham kaseb⚡</p>
+      </div>  
+    </div>
+  </footer>
+
+  <script>
+    function openWhatsApp() {
+      // Replace '1234567890' with the phone number you want to message
+      var phoneNumber = '201120610381';
+  
+      // Construct the WhatsApp URL
+      var url = 'https://api.whatsapp.com/send?phone=' + +phoneNumber;
+  
+      // Open WhatsApp in a new tab or window
+      window.open(url);
+    }
+  </script>
+
+  <!-- Scripts -->
+  <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/mainScript.js"></script>
+</body>
+</html>
